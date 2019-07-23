@@ -1,15 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
+import { UsuarioComponent } from './usuario/usuario/usuario.component';
 
 const ROUTES: Routes = [
     { path: 'home', component: HomeComponent },
-
-    //{ path: 'path/:routeParam', component: MyComponent },
-    //{ path: 'staticPath', component: ... },
-    //{ path: '**', component: ... },
-    //{ path: 'oldPath', redirectTo: '/staticPath' },
-    //{ path: ..., component: ..., data: { message: 'Custom' }
+    { path: 'usuario', component: UsuarioComponent },
+    {path: '', pathMatch: 'full', redirectTo: 'home'},
+    {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
 export const APPROUTING = RouterModule.forRoot(ROUTES);
